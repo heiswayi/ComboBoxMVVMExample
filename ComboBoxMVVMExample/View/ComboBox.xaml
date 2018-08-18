@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="ComboBoxMVVMExample.View.ComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Get Enum items: " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding EnumItems}" SelectedItem="{Binding EnumSelectedItem}" Margin="0 0 10 0"/>
+            <Button Content="Show Selected Item" Command="{Binding ShowEnumItemCommand}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Get Country list: " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding CountryList}" DisplayMemberPath="CountryName" SelectedValue="{Binding SelectedCountryCode}" SelectedValuePath="CountryTwoLetterCode" Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedCountryCode}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Get State list: " Margin="0 0 10 0" Width="120"/>
+            <ComboBox Width="120" ItemsSource="{Binding StateList}" DisplayMemberPath="StateName" SelectedValue="{Binding SelectedState}" SelectedValuePath="StateName" IsEnabled="{Binding AllowStateSelection}" Margin="0 0 10 0"/>
+            <Label Content="{Binding SelectedState}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

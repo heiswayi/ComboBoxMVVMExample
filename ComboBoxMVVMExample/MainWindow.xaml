@@ -1,0 +1,17 @@
+﻿<Window x:Class="ComboBoxMVVMExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:ComboBoxMVVMExample.View"
+        xmlns:viewModel="clr-namespace:ComboBoxMVVMExample.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <viewModel:ExampleViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <view:ComboBox/>
+        </StackPanel>
+    </Grid>
+    
+</Window>
